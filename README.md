@@ -81,6 +81,7 @@ _En cambio si deseas revirtir esas modificaciones, utiliza_
 ```
 $ git reset <Nombre del commit>
 ```
+## Paso 5: Crear tags (etiquetas para identificar partes del codigo) ⚙️
 
 _Se abrira el editor y procederas a actualizar el nombre del commit, guardaras los cambios y cerraras el editor_
 
