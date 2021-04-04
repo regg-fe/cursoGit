@@ -17,6 +17,10 @@ $ git config --global user.name <user>
 $ git config --global user.email <email>
 ```
 
+```
+$ git config --global core.editor <editor>
+```
+
 _Para verificar que se haya ingresado la informacion correcta usa_
 
 ```
@@ -45,7 +49,7 @@ _Si tienes archivos modificados recientemente, mediante este comando git te lo h
 $ git add <nombre del archivo>
 ```
 
-_Si tienes muchos archivos puedes utilizar el comnando_
+_Si tienes muchos archivos modificados o creados puedes utilizar el comnando_
 
 ```
 $ git add .
@@ -58,23 +62,20 @@ _Para crear estas capturas de tu codigo debes utilizar el siguiente comando_
 ```
 $ git commit -m "Mensaje de tu progreso"
 ```
-
-_En caso de querer actualizar el nombre de este commit, se utiliza_
-
-```
-$ git commit -amend
-```
-
 _Si es necesario ver el listado de commit, se usa el comando_
 
 ```
 $ git log --oneline
 ```
-
-_Si deseas volver a un commit anteriror utiliza el comando_
+_En caso de querer actualizar el nombre de este commit, se utiliza_
 
 ```
-$ git checkout <Nombre del commit>
+$ git commit -amend
+```
+_Se abrira el editor y procederas a actualizar el nombre del commit, guardaras los cambios y cerraras el editor. Si deseas volver a un commit anteriror utiliza el comando_
+
+```
+$ git checkout <Nombre del commit> 
 ```
 _En cambio si deseas revirtir esas modificaciones, utiliza_
 
@@ -83,45 +84,100 @@ $ git reset <Nombre del commit>
 ```
 ## Paso 5: Crear tags (etiquetas para identificar partes del codigo) ⚙️
 
-_Se abrira el editor y procederas a actualizar el nombre del commit, guardaras los cambios y cerraras el editor_
+_Una vez hayas avanzado lo suficiente y creas que debes hacer una version del sistema, utliza las "tags" (etiquetas), estas permitiran guardar los commits se han creado hasta el momento y funcionando como un puntero hacia un commit especifico_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+```
+$ git tags
+```
 
-## Contribuyendo 🖇️
+_Si deseas crear una tag usaras el comando, que guardara una etiqueta anotada_
 
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 
-## Wiki 📖
+```
+$ git tag -a <version> -m "descripcion"
+```
 
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+_O si es necesario hacer una etiqueta ligera_
 
-## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+```
+$ git tag -a <version>
+```
+
+## Paso 6: Subir tu repositorio local a la web de github ⚙️
+
+_Debes tener una cuenta Github creada y un repositorio tambien, una vez hecho esto debe utilizar el comando_
+
+```
+$ git remote add orgin https://github.com/repositorio.git
+```
+_Una vez establecida la conexion con el repositorio web, debes utilizar el comando_
+
+```
+$ git push -u origin master
+```
+_Para sincronizazr todos los cambios y por fin tener subido el repositorio local_
+
+
+## Paso 7: Clonar un repositorio web a local ⚙️
+
+_Si deseas clonar un repositorio web debes iniciarlizarl primero, si_
+
+```
+$ git remote add orgin https://github.com/repositorio.git
+```
+_Una vez establecida la conexion con el repositorio web, debes utilizar el comando_
+
+```
+$ git push -u origin master
+```
+_Para sincronizazr todos los cambios y por fin tener subido el repositorio local_
+
+## Paso 7: Crear branch, modificarlos y unificarlos ⚙️
+
+_Para crear una branch (rama) debes utilziar el comando_
+
+```
+$ git branch <branch>
+```
+
+_Para ver las ramas que ya se han creado, utiliza_
+
+```
+$ git branch O git show-branch 
+```
+
+_Para moverse de una rama a otra_
+
+```
+$ git checkout <branch> 
+```
+
+_Para fusionar ramas_
+
+```
+$ git merge experimental -m 'descripcion'
+```
+
+_Para fusionar los cambios con la rama principal_
+```
+$ git merge master -m 'descripcion'
+```
+
+_Para eliminar una rama_
+```
+$ git branch -d <branch>
+```
+
+_Cargar la rama en el repositorio remoto_
+```
+$ git push -u origin <branch>
+```
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
 * **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
+* **Pildoras Informaticas** - *Documentación* - [pildorasinformaticas](https://www.youtube.com/watch?v=ANF1X42_ae4&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU)
 
 ---
 ⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
